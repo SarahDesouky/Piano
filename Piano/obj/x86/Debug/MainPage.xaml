@@ -1,0 +1,214 @@
+﻿<Page
+    x:Class="Piano.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Piano"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+
+    <Page.BottomAppBar>
+        <AppBar Visibility="Visible" IsOpen="True" IsSticky="True" >
+            <StackPanel Orientation="Horizontal">
+
+                <AppBarButton x:ConnectionId='1' Label="Piano Record"  Name="piano" FontWeight="Bold"  VerticalAlignment="Center" Margin="20,0,20,0" Grid.Column="0" Width="auto"                   Icon="Microphone"/>
+                <!--<AppBarButton Label="Voice Record" Name="voice" FontWeight="Bold"  VerticalAlignment="Center" Margin="20,0,20,0" Grid.Column="1" Width="auto" Content="Voice Record" Click="StartRec" Icon="Volume"/>-->
+                <AppBarButton x:ConnectionId='2' Visibility="Collapsed" Name="Stop" Label="Stop"  FontWeight="Bold"  VerticalAlignment="Center" Grid.Column="0" Margin="20,0,20,0" Content="Stop"                 Icon="Stop"/>
+                <AppBarButton x:ConnectionId='3' Label="Recordings" FontWeight="Bold"  VerticalAlignment="Center" Grid.Column="1" Margin="20,0,20,0" Width="auto" Content="Recordings"                          Icon="MusicInfo"/>
+                <AppBarButton x:ConnectionId='4' Label="RSS"  FontWeight="Bold"  VerticalAlignment="Center" Grid.Column="2" Margin="20,0,20,0" Content="RSS Feed"                   Icon="World"/>
+
+            </StackPanel>
+        </AppBar>
+    </Page.BottomAppBar>
+
+   
+        
+  
+    <StackPanel Background="Black">
+        <!--<Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Width="100" Grid.Column="0" Height="100" Margin="30" Background="Red"  HorizontalAlignment="Center" Content="Record" FontWeight="Bold" FontSize="22" Click="StartRec"  />
+            <Button Width="100" Grid.Column="1" Height="100" Margin="110,0,110,30" Background="Yellow"  HorizontalAlignment="Center" FontWeight="Bold" Content="Stop" FontSize="22" VerticalAlignment="Bottom" Click="StopRec"/>
+            <Button Grid.Column="2" Height="50" Width="150" Margin="30" Background="Green"  FontWeight="Bold" FontStyle="Normal" HorizontalAlignment="Center" Content="Recordings" FontSize="22" Click="Recordings_Click"/>
+            <Button Grid.Column="3" Height="50" Width="220" Margin="30"  Background="Orange" FontStyle="Normal" FontWeight="Bold" HorizontalAlignment="Center" Content="BBC Music Reviews" FontSize="22" Click="RSS_Click"/>
+        </Grid>-->
+        <Grid  VerticalAlignment="Top" BorderBrush="Beige" BorderThickness="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+
+            <!--<MediaElement x:Name="A"  AudioCategory="SoundEffects" Source="Assets/Piano/a.wav" Visibility="Collapsed" AutoPlay="False"/>
+                <MediaElement x:Name="AS" AudioCategory="SoundEffects" Source="Assets/Piano/as.wav" Visibility="Collapsed" AutoPlay="False"/>
+                <MediaElement x:Name="B" AudioCategory="SoundEffects" Source="Assets/Piano/b.wav" Visibility="Collapsed" AutoPlay="False"/>
+                <MediaElement x:Name="C" AudioCategory="SoundEffects" Source="Assets/Piano/cf.wav" Visibility="Collapsed" AutoPlay="False"/>
+                <MediaElement x:Name="CS" AudioCategory="SoundEffects" Source="Assets/Piano/cs.wav" Visibility="Collapsed" AutoPlay="False"/>
+                <MediaElement x:Name="D" AudioCategory="SoundEffects" Source="Assets/Piano/d.wav" Visibility="Collapsed" AutoPlay="False"/>
+                <MediaElement x:Name="DS" AudioCategory="SoundEffects" Source="Assets/Piano/ds.wav" Visibility="Collapsed" AutoPlay="False"/>
+                <MediaElement x:Name="E" AudioCategory="SoundEffects" Source="Assets/Piano/e.wav" Visibility="Collapsed" AutoPlay="False"/>
+                <MediaElement x:Name="F" AudioCategory="SoundEffects" Source="Assets/Piano/f.wav" Visibility="Collapsed" AutoPlay="False"/>
+                <MediaElement x:Name="FS" AudioCategory="SoundEffects" Source="Assets/Piano/fs.wav" Visibility="Collapsed" AutoPlay="False"/>
+                <MediaElement x:Name="G" AudioCategory="SoundEffects" Source="Assets/Piano/g.wav" Visibility="Collapsed" AutoPlay="False"/>
+                <MediaElement x:Name="GS" AudioCategory="SoundEffects" Source="Assets/Piano/gs.wav" Visibility="Collapsed" AutoPlay="False"/>-->
+
+            <MediaElement x:ConnectionId='9' x:Name="la0"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/la0.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='10' x:Name="las0"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/las0.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='11' x:Name="si0"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/si0.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='12' x:Name="du1"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/du1.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='13' x:Name="dus1"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/dus1.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='14' x:Name="ray1"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/ray1.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='15' x:Name="rays1"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/rays1.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='16' x:Name="mi1"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/mi1.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='17' x:Name="fa1"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/fa1.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='18' x:Name="fas1"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/fas1.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='19' x:Name="so1"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/so1.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='20' x:Name="sos1"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/sos1.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='21' x:Name="la1"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/la1.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='22' x:Name="las1"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/las1.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='23' x:Name="si1"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/si1.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='24' x:Name="du2"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/du2.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='25' x:Name="dus2"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/dus2.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='26' x:Name="ray2"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/ray2.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='27' x:Name="rays2"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/rays2.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='28' x:Name="mi2"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/mi2.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='29' x:Name="fa2"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/fa2.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='30' x:Name="fas2"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/fas2.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='31' x:Name="so2"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/so2.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='32' x:Name="sos2"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/sos2.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='33' x:Name="la2"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/la2.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='34' x:Name="las2"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/las2.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='35' x:Name="si2"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/si2.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='36' x:Name="du3"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/du3.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='37' x:Name="dus3"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/dus3.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='38' x:Name="ray3"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/ray3.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='39' x:Name="rays3"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/rays3.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='40' x:Name="mi3"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/mi3.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='41' x:Name="fa3"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/fa3.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='42' x:Name="fas3"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/fas3.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='43' x:Name="so3"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/so3.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='44' x:Name="sos3"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/sos3.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='45' x:Name="la3"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/la3.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='46' x:Name="las3"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/las3.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='47' x:Name="si3"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/si3.wav" Visibility="Collapsed" AutoPlay="False"/>
+
+            <MediaElement x:ConnectionId='48' x:Name="du4"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/du4.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='49' x:Name="dus4"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/dus4.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='50' x:Name="ray4"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/ray4.wav" Visibility="Collapsed" AutoPlay="False"/>
+            <MediaElement x:ConnectionId='51' x:Name="rays4"  AudioCategory="SoundEffects" Source="Assets/FinalNotes/rays4.wav" Visibility="Collapsed" AutoPlay="False"/>
+
+
+
+            <Button x:ConnectionId='52' Grid.Column="0" x:Name="la0u" Background="Beige" BorderBrush="Black" BorderThickness="1"  Width="50" Height="400"                                    />
+            <Button x:ConnectionId='53' Grid.Column="1" x:Name="si0u" Background="Beige" BorderBrush="Black" BorderThickness="1" Width="50" Height="400"                 />
+            <Button x:ConnectionId='54' Grid.Column="0" x:Name="las0u" VerticalAlignment="Top"  Grid.ColumnSpan="2" Margin="30,0,0,0" Background="Black" Width="40" Height="240"                  />
+
+            <Button x:ConnectionId='55' Grid.Column="2" x:Name="du1u" Background="Beige" BorderBrush="Black" BorderThickness="1"  Width="50" Height="400"                 />
+            <Button x:ConnectionId='56' Grid.Column="3" x:Name="ray1u" Background="Beige" BorderBrush="Black" BorderThickness="1" Width="50" Height="400"                  />
+            <Button x:ConnectionId='57' Grid.Column="2" x:Name="dus1u" VerticalAlignment="Top"  Grid.ColumnSpan="2" Margin="30,0,0,0" Background="Black" Width="40" Height="240"                  />
+            <Button x:ConnectionId='58' Grid.Column="4" x:Name="me1u" Background="Beige" BorderBrush="Black" BorderThickness="1"  Width="50" Height="400"                 />
+            <Button x:ConnectionId='59' Grid.Column="3" x:Name="rays1u" VerticalAlignment="Top"  Grid.ColumnSpan="2" Margin="30,0,0,0" Background="Black" Width="40" Height="240"                   />
+            <Button x:ConnectionId='60' Grid.Column="5" x:Name="fa1u" Background="Beige" BorderBrush="Black" BorderThickness="1" Width="50" Height="400"                 />
+            <Button x:ConnectionId='61' Grid.Column="6" x:Name="so1u" Background="Beige" BorderBrush="Black" BorderThickness="1"  Width="50" Height="400"                 />
+            <Button x:ConnectionId='62' Grid.Column="5" x:Name="fas1u" VerticalAlignment="Top"  Grid.ColumnSpan="2" Margin="30,0,0,0" Background="Black" Width="40" Height="240"                  />
+            <Button x:ConnectionId='63' Grid.Column="7" x:Name="la1u" Background="Beige" BorderBrush="Black" BorderThickness="1"  Width="50" Height="400"                 />
+            <Button x:ConnectionId='64' Grid.Column="6" x:Name="sols1u" VerticalAlignment="Top"  Grid.ColumnSpan="2" Margin="30,0,0,0" Background="Black" Width="40" Height="240"                   />
+            <Button x:ConnectionId='65' Grid.Column="8" x:Name="si1u" Background="Beige" BorderBrush="Black" BorderThickness="1" Width="50" Height="400"                 />
+            <Button x:ConnectionId='66' Grid.Column="7" x:Name="las1u" VerticalAlignment="Top"  Grid.ColumnSpan="2" Margin="30,0,0,0" Background="Black" Width="40" Height="240"                  />
+
+
+            <Button x:ConnectionId='67' Grid.Column="9" x:Name="du2u" Background="Beige" BorderBrush="Black" BorderThickness="1"  Width="50" Height="400"                 />
+            <Button x:ConnectionId='68' Grid.Column="10" x:Name="ray2u" Background="Beige" BorderBrush="Black" BorderThickness="1" Width="50" Height="400"                  />
+            <Button x:ConnectionId='69' Grid.Column="9" x:Name="dus2u" VerticalAlignment="Top"  Grid.ColumnSpan="2" Margin="30,0,0,0" Background="Black" Width="40" Height="240"                  />
+            <Button x:ConnectionId='70' Grid.Column="11" x:Name="me2u" Background="Beige" BorderBrush="Black" BorderThickness="1"  Width="50" Height="400"                 />
+            <Button x:ConnectionId='71' Grid.Column="10" x:Name="rays2u" VerticalAlignment="Top"  Grid.ColumnSpan="2" Margin="30,0,0,0" Background="Black" Width="40" Height="240"                   />
+            <Button x:ConnectionId='72' Grid.Column="12" x:Name="fa2u" Background="Beige" BorderBrush="Black" BorderThickness="1" Width="50" Height="400"                 />
+            <Button x:ConnectionId='73' Grid.Column="13" x:Name="so2u" Background="Beige" BorderBrush="Black" BorderThickness="1"  Width="50" Height="400"                 />
+            <Button x:ConnectionId='74' Grid.Column="12" x:Name="fas2u" VerticalAlignment="Top"  Grid.ColumnSpan="2" Margin="30,0,0,0" Background="Black" Width="40" Height="240"                  />
+            <Button x:ConnectionId='75' Grid.Column="14" x:Name="la2u" Background="Beige" BorderBrush="Black" BorderThickness="1"  Width="50" Height="400"                 />
+            <Button x:ConnectionId='76' Grid.Column="13" x:Name="sos2u" VerticalAlignment="Top"  Grid.ColumnSpan="2" Margin="30,0,0,0" Background="Black" Width="40" Height="240"                   />
+            <Button x:ConnectionId='77' Grid.Column="15" x:Name="si2u" Background="Beige" BorderBrush="Black" BorderThickness="1"  Width="50" Height="400"                 />
+            <Button x:ConnectionId='78' Grid.Column="14" x:Name="las2u" VerticalAlignment="Top"  Grid.ColumnSpan="2" Margin="30,0,0,0" Background="Black" Width="40" Height="240"                  />
+
+            <Button x:ConnectionId='79' Grid.Column="16" x:Name="du3u" Background="Beige" BorderBrush="Black" BorderThickness="1"  Width="50" Height="400"                 />
+            <Button x:ConnectionId='80' Grid.Column="17" x:Name="ray3u" Background="Beige" BorderBrush="Black" BorderThickness="1"  Width="50" Height="400"                  />
+            <Button x:ConnectionId='81' Grid.Column="16" x:Name="dus3u" VerticalAlignment="Top"  Grid.ColumnSpan="2" Margin="30,0,0,0" Background="Black" Width="40" Height="240"                  />
+            <Button x:ConnectionId='82' Grid.Column="18" x:Name="me3u" Background="Beige" BorderBrush="Black" BorderThickness="1"  Width="50" Height="400"                 />
+            <Button x:ConnectionId='83' Grid.Column="17" x:Name="rays3u" VerticalAlignment="Top"  Grid.ColumnSpan="2" Margin="30,0,0,0" Background="Black" Width="40" Height="240"                   />
+            <Button x:ConnectionId='84' Grid.Column="19" x:Name="fa3u" Background="Beige" BorderBrush="Black" BorderThickness="1"  Width="50" Height="400"                 />
+            <Button x:ConnectionId='85' Grid.Column="20" x:Name="so3u" Background="Beige" BorderBrush="Black" BorderThickness="1"  Width="50" Height="400"                 />
+            <Button x:ConnectionId='86' Grid.Column="19" x:Name="fas3u" VerticalAlignment="Top"  Grid.ColumnSpan="2" Margin="30,0,0,0" Background="Black" Width="40" Height="240"                  />
+            <Button x:ConnectionId='87' Grid.Column="21" x:Name="la3u" Background="Beige" BorderBrush="Black" BorderThickness="1"  Width="50" Height="400"                 />
+            <Button x:ConnectionId='88' Grid.Column="20" x:Name="sos3u" VerticalAlignment="Top"  Grid.ColumnSpan="2" Margin="30,0,0,0" Background="Black" Width="40" Height="240"                   />
+            <Button x:ConnectionId='89' Grid.Column="22" x:Name="si3u" Background="Beige" BorderBrush="Black" BorderThickness="1"  Width="50" Height="400"                 />
+            <Button x:ConnectionId='90' Grid.Column="21" x:Name="las3u" VerticalAlignment="Top"  Grid.ColumnSpan="2" Margin="30,0,0,0" Background="Black" Width="40" Height="240"                  />
+
+            <Button x:ConnectionId='91' Grid.Column="23" x:Name="du4u" Background="Beige" BorderBrush="Black" BorderThickness="1"  Width="50" Height="400"                 />
+            <Button x:ConnectionId='92' Grid.Column="24" x:Name="ray4u" Background="Beige" BorderBrush="Black" BorderThickness="1"  Width="50" Height="400"                  />
+            <Button x:ConnectionId='93' Grid.Column="23" x:Name="dus4u" VerticalAlignment="Top"  Grid.ColumnSpan="2" Margin="30,0,0,0" Background="Black" Width="40" Height="240"                  />
+            <Button x:ConnectionId='94' Grid.Column="24" x:Name="rays4u" VerticalAlignment="Top"  Grid.ColumnSpan="2" Margin="30,0,0,0" Background="Black" Width="40" Height="240"                   />
+
+        </Grid>
+        
+      
+        <!--<Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+
+            </Grid.ColumnDefinitions>
+            <Button Margin="60" Grid.Column="0" HorizontalAlignment="Center" FontWeight="Bold" Background="Red"  FontSize="20" Width="300" Content="Start Voice Recording" Click="CaptureAudio"/>
+            <Button Margin="60" Grid.Column="1" HorizontalAlignment="Center" FontWeight="Bold" Background="Yellow"  FontSize="20" Width="300" Content="Stop Voice Recording" Click="StopCapture"/>
+        </Grid>-->
+
+
+        <StackPanel x:ConnectionId='5' Name="timerP" Visibility="Collapsed" Orientation="Horizontal">
+            <!--<Image x:Name="Wave" Source="/Assets/Wave.jpg" Visibility="Collapsed" Width="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="100 0 0 60"/>-->
+            <TextBlock x:ConnectionId='6' Margin="35,50,0,0" FontSize="20"  Foreground="Beige"  HorizontalAlignment="Left" VerticalAlignment="Bottom" Name="Minute" Text="00"/>
+            <TextBlock Margin="0,50,0,0" FontSize="20" Text=":" Foreground="Beige"  HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+            <TextBlock x:ConnectionId='7' Margin="0,50,0,0" FontSize="20" Name="Seconds" Text="00"  HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="Beige"/>
+            <Ellipse x:ConnectionId='8' Name="circle" Fill="Black" Margin="10,50,0,2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="20" Height="20"/>
+        </StackPanel>
+
+    </StackPanel>
+
+
+</Page>
+
